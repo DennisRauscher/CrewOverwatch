@@ -1,0 +1,83 @@
+{
+  "name": "angular-jwt",
+  "version": "0.1.9",
+  "description": "Library to help you work with JWTs on AngularJS",
+  "main": "index.js",
+  "license": "MIT",
+  "author": {
+    "name": "Martin Gontovnikas",
+    "email": "martin@gon.to"
+  },
+  "scripts": {
+    "test": "gulp test-src"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/auth0/angular-jwt.git"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "karma-mocha-reporter": "^0.3.1",
+    "chai": "^1.9.1",
+    "chai-jquery": "^1.2.3",
+    "gulp": "^3.8.7",
+    "gulp-concat": "^2.3.4",
+    "gulp-inject-string": "^1.1.0",
+    "gulp-ng-annotate": "^0.3.3",
+    "gulp-rename": "^1.2.0",
+    "gulp-uglify": "^0.3.1",
+    "karma": "^0.12.22",
+    "karma-chai": "^0.1.0",
+    "karma-chai-jquery": "^1.0.0",
+    "karma-chrome-launcher": "^0.1.4",
+    "karma-jasmine": "^0.1.5",
+    "karma-jquery": "^0.1.0",
+    "karma-mocha": "^0.1.8",
+    "karma-phantomjs-launcher": "^0.1.4",
+    "karma-sinon-chai": "^0.2.0",
+    "mocha": "^1.21.4",
+    "sinon": "^1.10.3",
+    "sinon-chai": "^2.5.0"
+  },
+  "engines": {
+    "node": ">=0.8.0"
+  },
+  "gitHead": "37407f03703976f97e0a1235a157885344f70377",
+  "bugs": {
+    "url": "https://github.com/auth0/angular-jwt/issues"
+  },
+  "homepage": "https://github.com/auth0/angular-jwt#readme",
+  "_id": "angular-jwt@0.1.9",
+  "_shasum": "db8bcf18f05aa57320ac2fda161d7e9622c099c3",
+  "_from": "angular-jwt@latest",
+  "_npmVersion": "3.10.9",
+  "_nodeVersion": "6.9.2",
+  "_npmUser": {
+    "name": "ryanchenkie",
+    "email": "ryanchenkie@gmail.com"
+  },
+  "dist": {
+    "shasum": "db8bcf18f05aa57320ac2fda161d7e9622c099c3",
+    "tarball": "https://registry.npmjs.org/angular-jwt/-/angular-jwt-0.1.9.tgz"
+  },
+  "maintainers": [
+    {
+      "name": "mgonto",
+      "email": "martin@gonto.com.ar"
+    },
+    {
+      "name": "ryanchenkie",
+      "email": "ryanchenkie@gmail.com"
+    },
+    {
+      "name": "sirchris",
+      "email": "nwambachristian@gmail.com"
+    }
+  ],
+  "_npmOperationalInternal": {
+    "host": "packages-12-west.internal.npmjs.com",
+    "tmp": "tmp/angular-jwt-0.1.9.tgz_1484687973056_0.2288437057286501"
+  },
+  "directories": {},
+  "_resolved": "https://registry.npmjs.org/angular-jwt/-/angular-jwt-0.1.9.tgz"
+}

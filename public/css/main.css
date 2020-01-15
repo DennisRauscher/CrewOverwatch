@@ -1,0 +1,146 @@
+@import url("https://fonts.googleapis.com/css?family=Abel|Exo|Fira+Sans|Josefin+Sans|Vampiro+One");
+html, body {
+  padding: none;
+  margin: none;
+  font-family: "Fira Sans", sans-serif;
+  color: #B2CEDA;
+  background-color: #A7929C; }
+
+.page {
+  position: fixed;
+  top: 0px;
+  left: 100%;
+  width: 100%;
+  height: 100%;
+  background-color: #736C8B;
+  transition: all .5s;
+  opacity: 0;
+  z-index: -2; }
+  .page.left {
+    left: -100%; }
+  .page.active {
+    left: 0;
+    z-index: 800;
+    opacity: 1; }
+
+.headline {
+  width: 100%;
+  height: 150px;
+  font-family: "Vampiro One", cursive; }
+  .headline.in {
+    margin-top: 50px; }
+  .headline li {
+    font-size: 64px;
+    text-align: center;
+    list-style: none; }
+    .headline li.sub {
+      font-size: 32px; }
+
+.loader {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 200px;
+  height: 200px;
+  margin-left: -100px;
+  margin-top: -100px; }
+  .loader li {
+    list-style: none;
+    font-size: 34px;
+    line-height: 100px;
+    text-align: center; }
+
+.btn {
+  width: 300px;
+  height: 50px;
+  border-radius: 8px 8px 8px 8px;
+  background: #A7929C;
+  margin: auto; }
+  .btn li {
+    list-style: none;
+    font-size: 24px;
+    text-align: center;
+    line-height: 50px;
+    font-family: "Fira Sans", sans-serif; }
+
+.input {
+  width: 300px;
+  height: 50px;
+  border-radius: 8px 8px 8px 8px;
+  background: #A7929C;
+  color: #C5ECDA;
+  margin: auto;
+  font-size: 24px;
+  text-align: center;
+  line-height: 50px;
+  font-family: "Fira Sans", sans-serif;
+  border: none;
+  margin-bottom: 5px;
+  display: block; }
+
+.settingsBtn {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  height: 50px;
+  width: 50px;
+  line-height: 50px;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.5); }
+  .settingsBtn li {
+    list-style: none;
+    color: white;
+    font-size: 20px; }
+
+.driverList {
+  width: 100%;
+  height: 100%; }
+  .driverList .crewInformation {
+    width: 100%;
+    height: 25px;
+    background: #A7929C;
+    margin-bottom: 3px;
+    line-height: 25px;
+    text-align: center;
+    font-size: 12px; }
+  .driverList .driver {
+    width: 100%;
+    height: 75px;
+    background: #A7929C;
+    display: flex;
+    flex-flow: row;
+    text-align: center;
+    margin-bottom: 5px;
+    overflow: hidden; }
+    .driverList .driver .icon {
+      width: 75px;
+      height: 100%;
+      background-size: 100% 100%; }
+    .driverList .driver .name {
+      flex-grow: 1;
+      height: 100%;
+      width: 100%;
+      display: flex;
+      flex-direction: column; }
+      .driverList .driver .name .nameDisplay {
+        flex-grow: 1;
+        width: 100%;
+        line-height: 50px; }
+        .driverList .driver .name .nameDisplay.ziel {
+          line-height: 75px; }
+      .driverList .driver .name .curPosition {
+        flex-grow: 1;
+        height: 25px;
+        background: gray;
+        width: 100%;
+        font-size: 12px;
+        line-height: 25px;
+        border-radius: 0px 12px 0px 0px; }
+    .driverList .driver .distance {
+      width: 100px;
+      height: 100%;
+      text-align: center;
+      font-size: 20px;
+      line-height: 75px; }
+
+/*# sourceMappingURL=main.css.map */

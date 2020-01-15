@@ -1,0 +1,224 @@
+@import url('https://fonts.googleapis.com/css?family=Abel|Exo|Fira+Sans|Josefin+Sans|Vampiro+One');
+
+$headline_font: 'Vampiro One', cursive;
+$font: 'Fira Sans', sans-serif;
+
+$text_color: white;
+$background_color_dark:  #736C8B;
+$background_color_light: #A7929C;
+$color_yellow: #E4E5C5;
+$color_light_blue: #C5ECDA;
+$color_blue: #B2CEDA;
+
+html, body
+{
+  padding: none;
+  margin: none;
+  font-family: $font;
+  color: $color_blue;
+  background-color: $background_color_light;
+}
+
+
+.page
+{
+  position: fixed;
+  top: 0px;
+  left: 100%;
+
+  width: 100%;
+  height: 100%;
+  background-color: $background_color_dark;
+  transition: all .5s;
+  opacity: 0;
+  z-index: -2;
+
+  &.left
+  {
+    left: -100%;
+  }
+
+  &.active
+  {
+    left: 0;
+    z-index: 800;
+    opacity: 1;
+  }
+}
+
+
+.headline
+{
+  width: 100%;
+  height: 150px;
+  font-family: $headline_font;
+
+  &.in
+  {
+    margin-top: 50px;
+  }
+
+  li
+  {
+    font-size: 64px;
+    text-align: center;
+    list-style: none;
+
+    &.sub
+    {
+      font-size: 32px;
+    }
+  }
+}
+
+.loader
+{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  width: 200px;
+  height: 200px;
+
+  margin-left: -100px;
+  margin-top: -100px;
+
+  li
+  {
+    list-style: none;
+    font-size: 34px;
+    line-height: 100px;
+    text-align: center;
+  }
+}
+
+.btn
+{
+  width: 300px;
+  height: 50px;
+  border-radius: 8px 8px 8px 8px;
+  background: $background_color_light;
+  margin: auto;
+
+  li
+  {
+    list-style: none;
+    font-size: 24px;
+    text-align: center;
+    line-height: 50px;
+    font-family: $font;
+  }
+}
+
+.input
+{
+  width: 300px;
+  height: 50px;
+  border-radius: 8px 8px 8px 8px;
+  background: $background_color_light;
+  color: $color_light_blue;
+  margin: auto;
+  font-size: 24px;
+  text-align: center;
+  line-height: 50px;
+  font-family: $font;
+  border: none;
+  margin-bottom: 5px;
+  display: block;
+}
+
+.settingsBtn
+{
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  height: 50px;
+  width: 50px;
+  line-height: 50px;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.5);
+
+  li
+  {
+    list-style: none;
+    color: white;
+    font-size: 20px;
+  }
+}
+
+.driverList
+{
+  width: 100%;
+  height: 100%;
+
+  .crewInformation
+  {
+    width: 100%;
+    height: 25px;
+    background: $background_color_light;
+    margin-bottom: 3px;
+    line-height: 25px;
+    text-align: center;
+    font-size: 12px;
+  }
+
+  .driver
+  {
+    width: 100%;
+    height: 75px;
+    background: $background_color_light;
+    display: flex;
+    flex-flow: row;
+    text-align: center;
+    margin-bottom: 5px;
+    overflow: hidden;
+
+    .icon
+    {
+        width: 75px;
+        height: 100%;
+        background-size: 100% 100%;
+    }
+
+    .name
+    {
+      flex-grow: 1;
+      height: 100%;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+
+      .nameDisplay
+      {
+        flex-grow: 1;
+        width: 100%;
+        line-height: 50px;
+
+        &.ziel
+        {
+          line-height: 75px;
+        }
+      }
+
+      .curPosition
+      {
+        flex-grow: 1;
+        height: 25px;
+        background: gray;
+        width: 100%;
+        font-size: 12px;
+        line-height: 25px;
+        border-radius: 0px 12px 0px 0px;
+      }
+    }
+
+    .distance
+    {
+      width: 100px;
+      height: 100%;
+      text-align: center;
+      font-size: 20px;
+      line-height: 75px;
+    }
+  }
+}

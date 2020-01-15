@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta charset="utf-8"/>
+
+    <title>CREW Overwatch</title>
+
+    <link rel="stylesheet" href="css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="css/main.css"/>
+
+    <script src="js/jquery-3.1.1.min.js"></script>
+    <script src="https://cdn.socket.io/socket.io-1.4.5.js"></script>
+    <script src="https://cdn.auth0.com/js/lock/10.9.1/lock.min.js"></script>
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/main.vue.js"></script>
+    <script src="js/main.gps.js"></script>
+    <script src="js/socket.manager.js"></script>
+
+    <script src="https://apis.google.com/js/api.js" type="text/javascript"></script>
+  </head>
+  <body>
+    <div id="app">
+
+      <div id="page_home" class="page left">
+        <div class="headline in">
+          <li>CREW</li>
+          <li class="sub">Overwatch</li>
+        </div>
+        <p style="text-align: center;">is a small app to help you on your way to your destination</p>
+        <div class="btn" onclick="login()">
+          <li>Login</li>
+        </div>
+      </div>
+
+      <div id="page_gpsMissing" class="page left">
+        <div class="headline in">
+          <li>CREW</li>
+          <li class="sub">Overwatch</li>
+        </div>
+        <p style="text-align: center;">In order to use our service we need to get your GPS information!</p>
+        <!--<div class="btn" onclick="checkGPS()">
+          <li>Send request again!</li>
+        </div>-->
+          <li>Retrying in 5s</li>
+        <br />
+      </div>
+
+      <div id="page_profile" class="page left">
+        <div class="headline in">
+          <li>CREW</li>
+          <li class="sub">Overwatch</li>
+        </div>
+        <p style="text-align: center;"><b>Hello</b> {{user.name}}</p>
+        <div class="btn" onclick="createCrew()">
+          <li>Create Crew</li>
+        </div>
+        <br />
+        <div class="btn" onclick="navigate_to('joinGroup')">
+          <li>Join Crew</li>
+        </div>
+      </div>
+
+      <div id="page_problem" class="page left">
+        <div class="headline in">
+          <li>CREW</li>
+          <li class="sub">Overwatch</li>
+        </div>
+        <p style="text-align: center;">Connection problem, try again later!</p>
+        <div class="btn">
+          <li>Try again!</li>
+        </div>
+        <br />
+      </div>
+
+      <div id="page_joinGroup" class="page left">
+        <div class="headline in">
+          <li>CREW</li>
+          <li class="sub">Overwatch</li>
+        </div>
+        <p style="text-align: center;">Join a crew</p>
+        <input id="input_joinGroup" type="text" placeholder="CrewID" class="input"/>
+        <div class="btn">
+          <li onclick="joinCrew();">Join</li>
+        </div>
+        <br /><br />
+        <div class="btn">
+          <li onclick="navigate_to('profile')">Back</li>
+        </div>
+        <br />
+      </div>
+
+      <div id="page_groupSettings" class="page left">
+        <div class="headline in">
+          <li>CREW</li>
+          <li class="sub">Overwatch</li>
+        </div>
+        <p style="text-align: center;">Crew Settings</p>
+        <div class="btn">
+          <input id="input_crewDestination" type="text" v-bind:placeholder="crew.settings.destination" class="input"/>
+        </div>
+        <br />
+        <div class="btn" onclick="updateCrew();">
+          <li>Change</li>
+        </div>
+        <br />
+        <div class="btn" onclick="leaveCrew();">
+          <li>Leave Crew</li>
+        </div>
+        <br /><br /><br />
+        <div class="btn" onclick="navigate_to('driveSession');">
+          <li>Back</li>
+        </div>
+        <br />
+      </div>
+
+      <div id="page_errorScreen" class="page left">
+        <div class="headline in">
+          <li>CREW</li>
+          <li class="sub">Overwatch</li>
+        </div>
+        <p style="text-align: center;">Error</p>
+        <p style="text-align: center;" id="errorMsg"></p>
+        <div class="btn">
+          <li onclick="navigate_to(nextPageAfterError)">Okay</li>
+        </div>
+      </div>
+
+      <div id="page_driveSession" class="page left">
+        <div class="driverList">
+          <div class="crewInformation">
+            CrewID: {{crew.id}}
+          </div>
+
+          <div class="driver">
+            <div class="name">
+              <div class="nameDisplay ziel">
+                  {{crew.settings.destination}} (Ziel)
+              </div>
+            </div>
+          </div>
+
+          <div class="driver" v-for="member in crew.members">
+            <div class="icon" v-bind:style="{backgroundImage: 'url(' + member.userData.user.picture + ')'}"></div>
+            <div class="name">
+              <div class="nameDisplay">
+                {{member.userData.user.nickname}}
+              </div>
+              <div class="curPosition">
+                {{member.currentPoint}}
+              </div>
+            </div>
+            <div class="distance">{{member.distanceDisplay}}</div>
+          </div>
+        </div>
+
+        <div class="settingsBtn" onclick="navigate_to('groupSettings')">
+          <li><i class="fa fa-cog" aria-hidden="true"></i></li>
+        </div>
+      </div>
+
+
+      <!-- LOADING SCREEN -->
+      <div id="loadingScreen" class="page">
+        <div class="headline in">
+          <li>CREW</li>
+          <li class="sub">Overwatch</li>
+        </div>
+
+        <div class="loader">
+          <li><i class="fa fa-circle-o-notch fa-spin fa-3x fa-fw"></i></li>
+        </div>
+      </div>
+
+    </div>
+  </body>
+</html>
